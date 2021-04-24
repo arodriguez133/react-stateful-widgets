@@ -38,7 +38,8 @@ import React from 'react'; /* STEP 0 */
 
 export default function Input() {
   /* STEP 1 */
-
+  let [mood, setMood] = useState("");
+ 
   const changeInput = evt => {
     // When the input changes, its whole value can be found inside the event object.
     // Log out the synthetic event object 'evt' and see for yourself.
