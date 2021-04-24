@@ -53,7 +53,7 @@ export default function Counter() {
   let [count, setCount] = useState(0);
 
   const increment = () => {
-    
+    setCount += 1;
     /* STEP 4 */
   };
   const decrement = () => {
