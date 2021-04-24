@@ -31,11 +31,11 @@ export default function Programmers() {
   const [programmer] = useState(listOfAwesome);
 
   const getNameOfFeatured = () => {
-    // Leave this for last!
-    // This is NOT an event handler but a helper function. See its usage inside the JSX.
-    // It's going to utilize both slices of state to return the _name_ of the featured dev.
-    // The beauty of closures is that we can "see" both slices of state from this region
-    // of the program, without needing to inject the information through arguments.
+    for(let i = 0; i < programmer.length; i++){
+      if(programmer[i].id === id){
+        return programmer[i].name;
+      }
+    }
   };
 
   const style = {
@@ -60,14 +60,7 @@ export default function Programmers() {
         }
       </div>
       <div id='featured' style={style}>
-        {
-          // Ternaries are fantastic to render "one thing or the other" depending on the "truthiness" of something.
-          // Pseudo-code: if the currently featured id is truthy render text 1, otherwise render text 2.
-          // Replace the hard-coded false with the correct variable.
-          false
-            ? `🎉 Let's celebrate ${getNameOfFeatured()}! 🥳`
-            : 'Pick an awesome programmer'
-        }
+        { id ? `🎉 Let's celebrate ${getNameOfFeatured()}! 🥳`: 'Pick an awesome programmer'}
       </div>
     </div>
   );
